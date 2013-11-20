@@ -69,12 +69,19 @@ def quantum_annealing(start_field_strength, field_strength_decay, width, max_p, 
 		iter += 1
 	return (initial_state+1)*2, time.time() - start
 
+""" Raw Inputs """
+
+start_field_strength = float(raw_input('Enter quantum field strength: '))
+field_strength_decay = float(raw_input('Enter field strength decay: '))
+width = float(raw_input('Enter average hill width: '))
+max_p = int(raw_input('Enter maximum perimter: '))
+max_iter = int(raw_input('Enter maximum iterations: '))
+counter_limit = int(raw_input('Enter maximum QA runs: '))
 
 """ Annealing iterations """
 counter = 0
-while counter < 100:
-	print quantum_annealing(100, 0.03, 2, 10000, 5000)
+while counter < counter_limit:
+	print quantum_annealing(start_field_strength, field_strength_decay, width, max_p, max_iter)
 	counter += 1
-
 
 
